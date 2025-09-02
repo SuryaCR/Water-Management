@@ -1,0 +1,30 @@
+a{
+    color: white;
+    text-decoration: none;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+label{
+    font-weight: bold;
+    font-size: medium;
+}
+form{
+    width: 30%;
+}
+.form-group{
+    /* display: flex; */
+    justify-content: center;
+}
+button{
+    width: 40%;
+}
+input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

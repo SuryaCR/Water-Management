@@ -1,0 +1,109 @@
+<app-header></app-header><br>
+<h1>User Data</h1>
+
+<table class="content-table container">
+  <caption>
+    User Data
+  </caption>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile Number</th>
+    </tr>
+  </thead>
+  <tr class="active-row">
+    <td>{{ userValue.firstName }}</td>
+    <td>{{ userValue.lastName }}</td>
+    <td>{{ userValue.email }}</td>
+    <td>{{ userValue.mobile }}</td>
+  </tr>
+</table>
+<br /><br />
+
+<table class="content-table container">
+  <caption>
+    Total Litres Of Water
+  </caption>
+  <thead>
+    <tr>
+      <th>Total Litres Of Water for Food Crops</th>
+      <th>Water Used for Food Crops</th>
+      <th>Total Litres Of Water for Trees</th>
+      <th>Water Used for Trees</th>
+      <th>Total Litres Of Water for Non-Food Crops</th>
+      <th>Water Used for Non-Food Crops</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of watermanage_value1">
+      <td>{{ value.Water_food }}<span>Ltr</span></td>
+      <td>{{ value.Remain_food_water }}<span>Ltr</span></td>
+      <td>{{ value.Water_tree }}<span>Ltr</span></td>
+      <td>{{ value.Remain_tree_water }}<span>Ltr</span></td>
+      <td>{{ value.Water_non_food }}<span>Ltr</span></td>
+      <td>{{ value.Remain_non_food_water }}<span>Ltr</span></td>
+    </tr>
+    <tr *ngIf="watermanage_value1.length == 0">
+      <td>No Records</td>
+    </tr>
+  </tbody>
+</table>
+<br /><br />
+
+<label class="container">Search in This Table</label>
+<input
+  class="form-control container"
+  type="text"
+  name="search"
+  [(ngModel)]="searchText"
+  autocomplete="off"
+  placeholder="Search By Crop Type"
+/>
+<br /><br />
+<table class="content-table container">
+  <caption>
+    User Irrigation Details
+  </caption>
+  <thead>
+    <tr>
+      <th>Acres Of Land</th>
+      <th>Hours Of Water Irrigated</th>
+      <th>Type Of Crops</th>
+      <th>Litres Of Water Irrigated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of irrigation_value1 | searchFilter: searchText">
+      <td>{{ value.Acres }}</td>
+      <td>{{ value.Hours }}</td>
+      <td>{{ value.Crops }}</td>
+      <td>{{ value.Water_Litres }}</td>
+    </tr>
+    <tr *ngIf="watermanage_value1.length == 0">
+      <td>No Records</td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+<table class="content-table container">
+  <caption>
+    Additional Info
+  </caption>
+  <thead>
+    <tr>
+      <th>Type Of Soil</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let value of additional_value1">
+      <td>{{ value.Soil }}</td>
+      <td>{{ value.Address }}</td>
+    </tr>
+    <tr *ngIf="additional_value1.length == 0">
+      <td>No Records</td>
+    </tr>
+  </tbody>
+</table>

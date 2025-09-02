@@ -1,0 +1,13 @@
+<nav>
+    <h1><strong>Irrigation Management</strong></h1>
+    <div class="dropdown">
+      <button class="dropbtn">Services</button>
+      <div class="dropdown-content">
+        <a (click)="watermanage()">Water Management</a>
+        <a (click)="irrigation()">Irrigation Management</a>
+        <a (click)="showSpinner()">User Data</a>
+      </div>
+    </div>
+    <a routerLink="/about"><strong>About Us</strong></a>
+    <a routerLink="" (click)="logout()"><strong>Log Out</strong></a>
+  </nav>
