@@ -81,6 +81,7 @@ label{
 form{
   width: 50%;
 }
+
 input::placeholder {
   color: #dddddd;
 }
